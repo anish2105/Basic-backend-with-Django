@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Working </h1>
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Views</th>
+      </tr>
+      {% for items in all_items %}
+      <tr>
+        <td>{{ items.name }}</td>
+        <td>{{ items.name }}</td>
+        <td><a href="{% url 'delete' items.id %}">Delete</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+
+
+
+
+
+    <form  action="{% url 'home' %}" method="post">
+      {% csrf_token %}
+      <input type="text" name="name" placeholder="Enter Name..."><br>
+      <input type="text" name="email" placeholder="Enter Email..."><br>
+      <input type="text" name="views" placeholder="Enter Views.."><br>
+      <input type="submit"  value="Submit">
+
+
+    </form>
+  </body>
+</html>
